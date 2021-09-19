@@ -1,11 +1,40 @@
-<header>
+<nav class="navbar navbar-expand-md navbar-expand-xs navbar-expend-lg navbar-dark bg-black">
   <div class="container">
-    <div class="row">
-      <div class= "navbar-header">
-        <%=link_to root_path do%>
-          <h1>Camefig</h1>
-        <% end %>
+    <h1 class="m-0">
+      <h1><%=link_to 'Camefig', root_path, class: 'text-decoration-none' %></h1>
+    </h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#grobalNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="col-md-9 clearfix">
+      <div class = "col-md-3">
+        <div class = "float-right">
+          <div id="grobalNav" class="collapse navbar-collapse float-right">
+            <ul class="navbar-nav ml-auto pull-right">
+              <li class="nav-item pl-4 active">
+                <a href="#" class="nav-link text-center">HOME</a>
+              </li>
+              <li class="nav-item pl-4">
+                <a href="#" class="nav-link text-center">ABOUT</a>
+              </li>
+              <li class="nav-item pl-4">
+                <a href="#" class="nav-link text-center">BLOG</a>
+              </li>
+              <li class="nav-item pl-4">
+                <a href="#" class="nav-link text-center">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</header>
+</nav>
+
+<div class= "container">
+  <div class="row">
+    <div class= "col-md-3">
+      mx-auto
+    </div>
+  </div>
+</div>
