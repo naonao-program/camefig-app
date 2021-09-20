@@ -34,17 +34,19 @@ ActiveRecord::Schema.define(version: 2021_09_20_084525) do
   end
 
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.decimal "f_number", precision: 10, null: false
+    t.string "genre", null: false
+    t.float "f_number", null: false
     t.string "shutter_speed", null: false
     t.integer "iso", null: false
     t.integer "month", null: false
     t.integer "time"
-    t.string "genre"
     t.string "camera_name"
     t.string "lens_name"
     t.text "accessories"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -61,4 +63,5 @@ ActiveRecord::Schema.define(version: 2021_09_20_084525) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "photos", "users"
 end
