@@ -1,40 +1,30 @@
-<nav class="navbar navbar-expand-md navbar-expand-xs navbar-expend-lg navbar-dark bg-black">
-  <div class="container">
-    <h1 class="m-0">
-      <h1><%=link_to 'Camefig', root_path, class: 'text-decoration-none' %></h1>
-    </h1>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#grobalNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="col-md-9 clearfix">
-      <div class = "col-md-3">
-        <div class = "float-right">
-          <div id="grobalNav" class="collapse navbar-collapse float-right">
-            <ul class="navbar-nav ml-auto pull-right">
-              <li class="nav-item pl-4 active">
-                <a href="#" class="nav-link text-center">HOME</a>
-              </li>
-              <li class="nav-item pl-4">
-                <a href="#" class="nav-link text-center">ABOUT</a>
-              </li>
-              <li class="nav-item pl-4">
-                <a href="#" class="nav-link text-center">BLOG</a>
-              </li>
-              <li class="nav-item pl-4">
-                <a href="#" class="nav-link text-center">CONTACT</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+<div class = "container">
+  <div class="row my-3">
+      <h1>モーダルを開く</h1>
+  </div>
+  <div class="row mb-5">
+    <div class="col-2">
+      <button type="button" class="btn btn-primary mb-12" data-toggle="modal" data-target="#testModal"><i class= "fas fa-upload"></i></i></button>
+    </div>
+    <div class="col-2">
+      <a class="btn btn-primary" data-toggle="modal" data-target="#testModal">リンクボタンで開く</a>
     </div>
   </div>
-</nav>
+</div>
 
-<div class= "container">
-  <div class="row">
-    <div class= "col-md-3">
-      mx-auto
+<div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>新規投稿</h4>
+            </div>
+            <div class="modal-body">
+                <label>データを削除しますか？</label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                <button type="button" class="btn btn-danger">削除</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
