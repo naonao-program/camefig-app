@@ -1,2 +1,29 @@
-<%=form_with(model: @%>
-<%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+<div class="container mt-4">
+  <div class="row mt-5">
+    <div class="col-sm-3 col-md-10 mx-auto">
+      <h3 class="mb-4">新規投稿</h3>
+        <%=form_with model: @photo, local: true do |f|%>
+          <div class="card mb-3">
+            <div class = "card-body">
+              <div class="d-flex justify-content-between">
+                <div class="class-description pb-3 pt-3">
+                  <%= f.file_field :image, class: 'hidden pb-4' %>
+                  <p>ジャンル:<%= f.text_field :genre %></p>
+                  <p>F値:<%= f.text_field :shutter_speed %></p>
+                  <p>シャッタースピード:<%= f.text_field :shutter_speed %></p>
+                  <p>ISO:<%= f.text_field :camera_name %>
+                  <p>撮影した月:<%= f.text_field :lens_name %></p>
+                  <h4>使用機材</h4>
+                  <p>カメラ:<%= f.text_field :camera_name %></p>
+                  <p>
+                  <p>レンズ</p>
+                  <%= f.submit '送信' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </h3>
+    </div>
+  </div>
+</div>
