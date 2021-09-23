@@ -2,45 +2,41 @@
   <div class="row mt-5">
     <div class="col-sm-3 col-md-10 mx-auto">
       <h3 class="mb-4">新規投稿</h3>
-      <%# タブ %>
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a href="#contents1" class="nav-link active" data-toggle="tab">Photo</a>
-        </li>
-        <li class="nav-item">
-          <a href="#contents2" class="nav-link" data-toggle="tab">Video</a>
-        </li>
-      </ul>
-      <%# タブの中身 %>
-      <div class="tab-content">
-        <%# Photoタブの中身 %>
-        <div id="contents1" class="tab-pane active">
-          <p>Photo</p>
-        </div>
-        <%# Videoタブの中身 %>
-        <div id="#contents2" class="tab-pane">
-          <p>Video</p>
-        </div>
-      </div>
     </div>
   </div>
 </div>
 
 <div class="container">
   <ul class="nav nav-tabs">
-    <li class="nav-item"><a href="#a" class="nav-link active" data-toggle="tab">Aタブ</a></li>
-    <li class="nav-item"><a href="#b" class="nav-link"data-toggle="tab">Bタブ</a></li>
-    <li class="nav-item"><a href="#c" class="nav-link"data-toggle="tab">Cタブ</a></li>
+    <li class="nav-item"><a href="#photo" class="nav-link active" data-toggle="tab">Photo</a></li>
+    <li class="nav-item"><a href="#b" class="nav-link"data-toggle="tab">Video</a></li>
   </ul>
   <div class="tab-content">
-    <div id="a" class="tab-pane active">
-      <p>あいうえお</p>
+    <div id="photo" class="tab-pane active">
+      <div class= "card mb-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div class="class-description pb-3 pt-3">
+              <%=form_with model: @photo, local: true do |f|%>
+                <%= f.file_field :image, class: 'pb-3'%>
+                <p>ジャンル:<%= f.text_field :genre %></p>
+                <p>F値:<%= f.text_field :shutter_speed %></p>
+                <p>シャッタースピード:<%= f.text_field :shutter_speed %></p>
+                <p>ISO:<%= f.text_field :camera_name %>
+                <p>撮影した月:<%= f.text_field :lens_name %></p>
+                <h4>使用機材</h4>
+                <p>カメラ:<%= f.text_field :camera_name %></p>
+                <p>
+                <p>レンズ</p>
+                <%= f.submit '送信' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="b" class="tab-pane">
       <p>かきくけこ</p>
-    </div>
-    <div id="c" class="tab-pane">
-      <p>さしすせそ</p>
     </div>
   </div>
 </div>
