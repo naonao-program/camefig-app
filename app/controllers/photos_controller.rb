@@ -18,6 +18,6 @@ class PhotosController < ApplicationController
 
   private
   def photo_params
-    params.require(:photo).permit(:genre,:f_number,:shutter_speed,:iso,:month,:time,:camera_name,:lens_name,:accessories,:image).merge(user_id: current_user.id, month: params[:month].to_i)
+    params.require(:photo).permit(:genre,:f_number,:shutter_speed,:iso,:month,:time,:camera_name,:lens_name,:accessories,:image).merge(user_id: current_user.id, month: params[:photo][:month].to_i)
   end
 end
