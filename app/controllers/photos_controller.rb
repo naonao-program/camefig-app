@@ -5,6 +5,11 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
+    if @photo.save
+      redirect_to root_path, notice: "投稿が完了しました。"
+    else
+      render :upload
+    end
   end
 
   def show

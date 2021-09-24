@@ -17,14 +17,14 @@
                   <%= f.file_field :image, class: 'pb-3'%>
                 </div>
                 <p>ジャンル:<%= f.text_field :genre %></p>
-                <p>F値:<%= f.text_field :shutter_speed %></p>
+                <p>F値:<%= f.text_field :f_number %></p>
                 <p>シャッタースピード:<%= f.text_field :shutter_speed %></p>
                 <p>ISO:<%= f.text_field :camera_name %>
                 <p>撮影した月:<%= f.text_field :lens_name %></p>
                 <h4>使用機材</h4>
-                <p>カメラ:<%= f.text_field :camera_name %></p>
-                <p>
-                <p>レンズ</p>
+                <p>カメラ:<%= f.text_field :camera_name, placeholder: "Sony α7Ⅲ" %></p>
+                <p>レンズ:<%= f.text_field :lens_name, placeholder: "Sony 35mm F1.4 GM"%></p>
+                <p>アクセサリー:<%= f.text_field :accessories, placeholder: "Kenko Pro 1D PRO SOFTON-A(W)" %></p>
                 <%= f.submit '投稿' %>
               <% end %>
             </div>
