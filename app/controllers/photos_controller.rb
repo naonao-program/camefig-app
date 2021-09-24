@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
     if @photo.save
       redirect_to root_path, notice: "投稿が完了しました。"
     else
-      render :upload
+      render 'homes/upload'
     end
   end
 
