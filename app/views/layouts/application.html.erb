@@ -21,7 +21,7 @@
   <body class= "bg-light">
     <header>
       <nav class="navbar navbar-expand-md navbar-expand-xs navbar-expend-lg navbar-dark bg-black">
-        <div class="container col-8">
+        <div class="container">
             <h1><%=link_to 'Camefig', root_path, class: 'text-decoration-none' %></h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#grobalNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@
                       <li class="nav-item pl-4 active">
                         <a href="#" class="nav-link text-center">HOME</a>
                       </li>
-                      <li class="nav-item pl-4">
+                      <li class="nav-item pl-5">
                         <%=link_to 'Upload', new_photo_path, class:"nav-link text-center" %>
                       </li>
                     <% else %>
