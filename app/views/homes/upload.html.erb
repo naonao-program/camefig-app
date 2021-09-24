@@ -14,19 +14,21 @@
             <div class="class-description pb-3 pt-3">
               <%=form_with model: @photo, local: true, class: 'dropzone',id: 'upload-dropzone' do |f|%>
               <%= render 'shared/error_messages', model: f.object %>
-                <div class="fallback">
+                <div class="fallback col-md-6">
                   <%= f.file_field :image, class: 'pb-3'%>
                 </div>
+                <div class="col-md-6 ml-6">
                 <p>ジャンル:<%= f.text_field :genre %></p>
-                <p>F値:<%= f.text_field :f_number %></p>
-                <p>シャッタースピード:<%= f.text_field :shutter_speed %></p>
-                <p>ISO:<%= f.text_field :camera_name %>
-                <p>撮影した月:<%= f.text_field :lens_name %></p>
+                <p>F値:<%= f.text_field :f_number,placeholder: "2.8" %></p>
+                <p>シャッタースピード:<%= f.text_field :shutter_speed, placeholder: "1/1000" %></p>
+                <p>ISO:<%= f.text_field :iso, placeholder: "100" %>
+                <p>撮影した月:<%= f.select :month, Photo.months %></p>
                 <h4>使用機材</h4>
                 <p>カメラ:<%= f.text_field :camera_name, placeholder: "Sony α7Ⅲ" %></p>
                 <p>レンズ:<%= f.text_field :lens_name, placeholder: "Sony 35mm F1.4 GM"%></p>
                 <p>アクセサリー:<%= f.text_field :accessories, placeholder: "Kenko Pro 1D PRO SOFTON-A(W)" %></p>
                 <%= f.submit '投稿' %>
+                </div>
               <% end %>
             </div>
           </div>

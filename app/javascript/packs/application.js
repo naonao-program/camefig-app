@@ -13,6 +13,8 @@ import '@fortawesome/fontawesome-free/js/all';
 import "bootstrap"
 import "../stylesheets/application"
 
+//= require jquery
+//= require jquery_ujs
 //= require dropzone
 
 // Uncomment to copy all static images under ../images to the output folder and reference
