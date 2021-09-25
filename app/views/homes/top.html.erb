@@ -9,6 +9,7 @@
                 <h5 class="card-title"><%= photo.user.nickname%></h5>
                 <div class="d-flex justify-content-between">
                   <div class="class-description">
+                    <p class="card-text"><%= image_tag photo.image.variant(resize: '500x500') %>
                     <p class="card-text mb-1">写真のジャンル:<%= photo.genre %></p>
                     <p class="card-text">撮影時期:<%= photo.month %></p>
                   </div>
