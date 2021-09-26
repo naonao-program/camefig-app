@@ -13,7 +13,7 @@ class Video < ApplicationRecord
     validates :image_or_youtube_url
   end
   
-  validates :youtube_url, inclusion: { in: %w(https://www.youtube.com/) }
+  validates :youtube_url, format: /\A#{URI::regexp(%w(http https www youtube com))}\z/
 
   private
   def image_or_youtube_url
