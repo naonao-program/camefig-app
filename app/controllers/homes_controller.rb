@@ -5,6 +5,6 @@ class HomesController < ApplicationController
 
   def upload
     @photo = Photo.new
-    @movie = Movie.new
+    @video = Video.new
   end
 end

@@ -41,7 +41,23 @@
         <div class="card-body">
           <div class="d-flex justify-content-between">
             <div class="class-description pb-3 pt-3">
-              <p>かきくけこ</p>
+              <%=form_with model: @video, local: true, class: 'dropzone',id: 'upload-dropzone' do |f|%>
+              <%= render 'shared/error_messages', model: f.object %>
+                <div class="fallback col-md-6">
+                  <%= f.file_field :movie, class: 'pb-3'%>
+                </div>
+                <div class="col-md-6 ml-6">
+                <p>YoutubeのURL:<%= f.text_field :youtube_url, placeholder: "ポートレート"%></p>
+                <p>撮影した月:<%= f.select :month, Video.months %></p>
+                <p>撮影時の解像度・フレームレート:<%= f.text_field :fps, placeholder: "4K 60FPS"%></p>
+                <p>撮る上でのコツ:<%= f.text_field :tips, placeholder: ""%>
+                <h4>使用機材</h4>
+                <p>カメラ:<%= f.text_field :camera_name, placeholder: "Sony α7Ⅲ" %></p>
+                <p>レンズ:<%= f.text_field :lens_name, placeholder: "Sony 35mm F1.4 GM"%></p>
+                <p>アクセサリー:<%= f.text_field :accessories, placeholder: "Kenko Pro 1D PRO SOFTON-A(W)" %></p>
+                <%= f.submit '投稿' %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>

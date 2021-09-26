@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2021_09_25_024327) do
   create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "tips", null: false
     t.integer "month", null: false
+    t.string "fps", null: false
     t.string "youtube_url"
     t.string "camera_name"
     t.string "lens_name"

@@ -10,5 +10,13 @@ class Video < ApplicationRecord
   with_options presence: true do
     validates :tips
     validates :month, numericality: {greater_than: 0}
+    validates :image_or_youtube_url
+  end
+  
+  validates :youtube_url, inclusion: { in: %w(https://www.youtube.com/) }
+
+  private
+  def image_or_youtube_url
+    image.presence or youtube_url.presence
   end
 end
