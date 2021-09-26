@@ -17,6 +17,6 @@ class Video < ApplicationRecord
 
   private
   def image_or_youtube_url
-    image.presence or youtube_url.presence
+    video.presence || youtube_url.presence
   end
 end

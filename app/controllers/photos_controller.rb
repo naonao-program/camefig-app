@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-      redirect_to root_path, notice: "投稿が完了しました。"
+      redirect_to photo_path(@photo), notice: "投稿が完了しました。"
     else
       render 'homes/upload'
     end
