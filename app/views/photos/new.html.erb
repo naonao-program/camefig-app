@@ -1,0 +1,48 @@
+<div class="container mt-3">
+  <h3 class="mb-4">新規投稿</h3>
+  <%# タブボタン %>
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a href="#photo" class="nav-link active" data-toggle="tab">Photo</a></li>
+    <li class="nav-item"><a href="#b" class="nav-link"data-toggle="tab">Video</a></li>
+  </ul>
+  <%# タブの中身photo %>
+  <div class="tab-content">
+    <div id="photo" class="tab-pane active">
+      <div class= "card mb-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div class="class-description pb-3 pt-3">
+              <%=form_with model: @photo, local: true, class: 'dropzone',id: 'upload-dropzone' do |f|%>
+                <div class="fallback">
+                  <%= f.file_field :image, class: 'pb-3'%>
+                </div>
+                <p>ジャンル:<%= f.text_field :genre %></p>
+                <p>F値:<%= f.text_field :shutter_speed %></p>
+                <p>シャッタースピード:<%= f.text_field :shutter_speed %></p>
+                <p>ISO:<%= f.text_field :camera_name %>
+                <p>撮影した月:<%= f.text_field :lens_name %></p>
+                <h4>使用機材</h4>
+                <p>カメラ:<%= f.text_field :camera_name %></p>
+                <p>
+                <p>レンズ</p>
+                <%= f.submit '投稿' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# movieのタブの中身 %>
+    <div id="b" class="tab-pane">
+      <div class= "card mb-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div class="class-description pb-3 pt-3">
+              <p>かきくけこ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
