@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_09_25_024327) do
     t.integer "iso", null: false
     t.integer "month", null: false
     t.integer "time"
+    t.text "tips"
     t.string "camera_name"
     t.string "lens_name"
     t.text "accessories"

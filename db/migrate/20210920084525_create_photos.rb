@@ -7,6 +7,7 @@ class CreatePhotos < ActiveRecord::Migration[6.0]
       t.integer :iso, null:false
       t.integer :month, null:false
       t.integer :time
+      t.text :tips
       t.string :camera_name
       t.string :lens_name
       t.text :accessories
