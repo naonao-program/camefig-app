@@ -1,7 +1,6 @@
 class Video < ApplicationRecord
   mount_uploader :video, VideoUploader
   belongs_to :user
-  mount_uploader :video, VideoUploader
   enum month:{
     "---":0,
     "1月":1,"2月":2,"3月":3,"4月":4,"5月":5,"6月":6,"7月":7,
