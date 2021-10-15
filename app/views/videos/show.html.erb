@@ -1,0 +1,3 @@
+<% if @video.video.attached? %>
+  <%= video_tag  rails_blob_path(@video.video) %></video>
+<% end %>
