@@ -2,7 +2,9 @@
 
 <p>
   <strong>Video:</strong>
-  <%= @post.video %>
+  <%= link_to @post.video_url.to_s do %>
+    <%= video_tag(@post.video.to_s) %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

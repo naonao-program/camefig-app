@@ -28,7 +28,8 @@ class PostsController < ApplicationController
         format.html { redirect_to @post, notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        @photo = Photo.new
+        format.html { render 'homes/upload', status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -64,6 +65,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:video)
+      params.require(:post).permit(:video, :youtube_url, :fps, :tips, :camera_name, :lens_name, :accessories ).merge(user_id: current_user.id)
     end
 end

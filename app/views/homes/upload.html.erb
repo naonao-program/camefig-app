@@ -46,11 +46,11 @@
               <%=form_with model: @video, local: true, class: 'dropzone',id: 'upload-dropzone' do |f|%>
               <%= render 'shared/error_messages', model: f.object %>
                 <div class="fallback col-md-6">
-                  <%= f.file_field :movie, class: 'pb-3'%>
+                  <%= f.file_field :video, :accept => 'video/*' %>
                 </div>
                 <div class="col-md-6 ml-6">
                 <p class= "font-weight-bold">YoutubeのURL<br><%= f.text_field :youtube_url, placeholder: "ポートレート"%></p>
-                <p class= "font-weight-bold">撮影した月<span class="badge badge-danger mr-2 ml-1">必須</span><br><%= f.select :month, Video.months %></p>
+                <%# <p class= "font-weight-bold">撮影した月<span class="badge badge-danger mr-2 ml-1">必須</span><br><%= f.select :month, Post.months %></p>
                 <p class= "font-weight-bold">撮影時の解像度・フレームレート<span class="badge badge-danger ml-2">必須</span><br><%= f.text_field :fps, placeholder: "4K 60FPS"%></p>
                 <p class= "font-weight-bold">撮影時のコツ<span class="badge badge-danger mr-1 ml-2">必須</span><br><%= f.text_field :tips, placeholder: ""%>
                 <h4 class= "font-weight-bold">使用機材</h4>

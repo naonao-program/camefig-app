@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
     if @photo.save
       redirect_to photo_path(@photo), notice: "投稿が完了しました。"
     else
-      @video = Video.new
+      @video = Post.new
       render 'homes/upload'
     end
   end

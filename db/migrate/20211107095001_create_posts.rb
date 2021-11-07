@@ -8,6 +8,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :camera_name
       t.string :lens_name
       t.string :accessories
+      t.references :user, foreign_key: true
       t.timestamps
     end
   end
