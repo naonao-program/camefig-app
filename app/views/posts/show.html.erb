@@ -3,7 +3,7 @@
 <p>
   <strong>Video:</strong>
   <%= link_to @post.video_url.to_s do %>
-    <%= video_tag(@post.video.to_s) %>
+    <%= video_tag(@post.video.to_s, :loop => true, :autoplay => true, :muted => true, width:"960", height:"720") %>
   <% end %>
 </p>
 
