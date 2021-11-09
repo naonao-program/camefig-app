@@ -23,14 +23,14 @@
         <% end %>
         <%# movieについて %>
         <% @videos.each do |video| %>
-          <%= link_to video_path(video.id), class: "text-dark text-decoration-none" do %>
+          <%= link_to post_path(video.id), class: "text-dark text-decoration-none" do %>
             <div class="card mb-3">
               <div class="card-body">
                 <h5 class="card-title"><%= video.user.nickname%></h5>
                 <div class="d-flex justify-content-between">
                   <div class="class-description">
                     <p class="card-text mb-1">チップス:<%= video.tips %></p>
-                    <p class="card-text">撮影時期:<%= video.month %></p>
+                    
                   </div>
                 </div>
               </div>
