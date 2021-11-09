@@ -13,7 +13,16 @@
 
   <div class="field">
     <%= form.label :video %>
-    <%= form.file_field :video, :accept => 'video/*' %>
+    <%= form.file_field :video %>
+                    <div class="col-md-6 ml-6">
+                <p class= "font-weight-bold">YoutubeのURL<br><%= form.text_field :youtube_url, placeholder: "ポートレート"%></p>
+                <p class= "font-weight-bold">撮影した月<span class="badge badge-danger mr-2 ml-1">必須</span><br><%= form.select :month, Post.months %></p>
+                <p class= "font-weight-bold">撮影時の解像度・フレームレート<span class="badge badge-danger ml-2">必須</span><br><%= form.text_field :fps, placeholder: "4K 60FPS"%></p>
+                <p class= "font-weight-bold">撮影時のコツ<span class="badge badge-danger mr-1 ml-2">必須</span><br><%= form.text_field :tips, placeholder: ""%>
+                <h4 class= "font-weight-bold">使用機材</h4>
+                <p class= "font-weight-bold">カメラ<br><%= form.text_field :camera_name, placeholder: "Sony α7Ⅲ" %></p>
+                <p class= "font-weight-bold">レンズ<br><%= form.text_field :lens_name, placeholder: "Sony 35mm F1.4 GM"%></p>
+                <p class= "font-weight-bold">アクセサリー<br><%= form.text_field :accessories, placeholder: "Kenko Pro 1D PRO SOFTON-A(W)" %></p>
   </div>
 
   <div class="actions">
