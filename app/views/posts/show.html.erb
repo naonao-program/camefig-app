@@ -1,15 +1,14 @@
 <div class = "container">
   <div class = "row">
     <p id="notice"><%= notice %></p>
-    <div class= "col-5">
+    <div class= "col-6">
       <p>
         <strong>Video:</strong>
         <%= video_tag(@post.video.to_s, :loop => true, :autoplay => true,  :controls => true ,width:"200%", height:"80%", preload:"metadata",:playsinline => true,controlsList:"nodownload") %>
       </p>
       <tr>
-        <td>abc</td>
-        <td>aaa</td>
-      </tr>
+        <td><iframe width="200%" height="80%" src="https://www.youtube.com/embed/<%= @post.youtube_url[17..28]%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+      </tr><br>
 
       <%= link_to 'Edit', edit_post_path(@post) %> |
       <%= link_to 'Back', root_path %>

@@ -8,8 +8,9 @@ class Post < ApplicationRecord
     "8月":8,"9月":9,"10月":10,"11月":11,"12月":12
   }
   with_options presence: true do
-    validates :video
     validates :fps
     validates :tips
   end
+  validates :video, presence: true, unless: :youtube_url
+  validates :youtube_url, presence: true, unless: :video
 end

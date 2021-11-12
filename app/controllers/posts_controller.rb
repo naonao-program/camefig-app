@@ -29,6 +29,7 @@ class PostsController < ApplicationController
         format.json { render :show, status: :created, location: @post }
       else
         @photo = Photo.new
+        @video = Post.new
         format.html { render 'homes/upload', status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
