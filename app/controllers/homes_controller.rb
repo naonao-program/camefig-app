@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   def top
-    @photos = Photo.all
+    @photos = Photo.all.order(id: "DESC")
     @videos = Post.all
   end
 
