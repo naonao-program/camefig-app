@@ -5,9 +5,13 @@ class CreatePhotos < ActiveRecord::Migration[6.0]
       t.float :f_number, null:false
       t.string :shutter_speed, null:false
       t.integer :iso, null:false
-      t.integer :month, null:false
-      t.integer :time
+      t.integer :month
+      t.integer :time, null:false
       t.text :tips
+      t.text :hashtag
+      t.string :address
+      t.float :latitude
+      t.float :longitude
       t.string :camera_name
       t.string :lens_name
       t.text :accessories

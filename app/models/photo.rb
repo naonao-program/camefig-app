@@ -20,7 +20,7 @@ class Photo < ApplicationRecord
     validates :f_number
     validates :shutter_speed
     validates :iso
-    validates :month, numericality: {greater_than: 0}
     validates :time, numericality: {greater_than: 0}
   end
+  validates :month, numericality: {greater_than: 0}
 end

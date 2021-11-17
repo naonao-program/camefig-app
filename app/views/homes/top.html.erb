@@ -5,7 +5,8 @@
       <% @photos.each do |photo| %>
           <div class="card mb-3">
             <div class="card-body">
-              <h5 class="card-title"><%= photo.user.nickname%></h5>
+              <h5 class="card-title"><%= photo.user.nickname %></h5>
+              <p class = "small"><%= photo.address %></p>
               <%= link_to photo_path(photo.id), class: "text-dark text-decoration-none" do %>
               <div class="justify-content-between">
                 <div class="class-description">
@@ -21,7 +22,6 @@
           </div>
         <% end %>
       <% end %>
-
     </div>
     <div class = "col-sm-12 col-md-5 mx-auto ">
     <h3 class="mb-4">動画</h3>
