@@ -1,42 +1,46 @@
 <main class="container">
-  <div class="row mt-5">
-    <div class="col-sm-12 col-md-10 mx-auto">
-      <h3 class="mb-4">一覧</h3>
-        <% @photos.each do |photo| %>
-          <%= link_to photo_path(photo.id), class: "text-dark text-decoration-none" do %>
-            <div class="card mb-3">
-              <div class="card-body">
-                <h5 class="card-title"><%= photo.user.nickname%></h5>
-                <div class="d-flex justify-content-between">
-                  <div class="class-description">
-                    <p class="card-text"><%= image_tag photo.image.variant(resize: '500x500') %>
-                    <p class="card-text mb-1">写真のジャンル:<%= photo.genre %></p>
-                    <p class="card-text">撮影時期:<%= photo.month %></p>
-                  </div>
-                  <div class="class-button">
-                    <%= link_to "参加中", "#", class: "btn btn-sm btn-success" %>
-                  </div>
+  <div class="row mt-4">
+    <div class="col-sm-12 col-md-5 mx-auto">
+      <h3 class="mb-4">写真</h3>
+      <% @photos.each do |photo| %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title"><%= photo.user.nickname%></h5>
+              <%= link_to photo_path(photo.id), class: "text-dark text-decoration-none" do %>
+              <div class="justify-content-between">
+                <div class="class-description">
+                  <p class="card-text"><%= image_tag photo.image, width: '60%'%>
+                  <p class="card-text mb-1">写真のジャンル:<%= photo.genre %></p>
+                  <p class="card-text">撮影時期:<%= photo.month %></p>
+                </div>
+                <div class="class-button">
+                  <%= link_to "参加中", "#", class: "btn btn-sm btn-success" %>
                 </div>
               </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
-        <%# movieについて %>
-        <% @videos.each do |video| %>
-          <%= link_to post_path(video.id), class: "text-dark text-decoration-none" do %>
-            <div class="card mb-3">
-              <div class="card-body">
-                <h5 class="card-title"><%= video.user.nickname%></h5>
-                <div class="d-flex justify-content-between">
-                  <div class="class-description">
-                    <p class="card-text mb-1">コツ:<%= video.tips %></p>
-                    
-                  </div>
+      <% end %>
+
+    </div>
+    <div class = "col-sm-12 col-md-5 mx-auto ">
+    <h3 class="mb-4">動画</h3>
+      <%# movieについて %>
+      <% @videos.each do |video| %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title"><%= video.user.nickname%></h5>
+              <%= link_to post_path(video.id), class: "text-dark text-decoration-none" do %>
+              <div class="d-flex justify-content-between">
+                <div class="class-description">
+                  <p class="card-text mb-1">コツ:<%= video.tips %></p>
+                  
                 </div>
               </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
+      <% end %>
     </div>
   </div>
 </main>

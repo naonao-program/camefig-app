@@ -1,7 +1,7 @@
 class HomesController < ApplicationController
   def top
-    @photos = Photo.all
-    @videos = Post.all
+    @photos = Photo.all.order(id: "DESC")
+    @videos = Post.all.order(id: "DESC")
   end
 
   def upload
