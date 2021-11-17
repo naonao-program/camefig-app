@@ -1,6 +1,6 @@
 <main class="container">
   <div class="row mt-4">
-    <div class="col-sm-12 col-md-5 mx-auto">
+    <div class="col-sm-12 col-md-6 mx-auto">
       <h3 class="mb-4">写真</h3>
       <% @photos.each do |photo| %>
           <div class="card mb-3">
@@ -11,8 +11,14 @@
               <div class="justify-content-between">
                 <div class="class-description">
                   <p class="card-text"><%= image_tag photo.image, width: '60%'%>
-                  <p class="card-text mb-1">写真のジャンル:<%= photo.genre %></p>
-                  <p class="card-text">撮影時期:<%= photo.month %></p>
+                  <p class="card-text">シャッタースピード:<%= photo.shutter_speed %></p>
+                  <p class="card-text">F値:<%= photo.f_number %></p>
+                  <p class="card-text">ISO:<%= photo.iso %></p>
+                  <details><summary>機材</summary>
+                    <p>Camera:<%= photo.camera_name %></p>
+                    <p>Lens:<%= photo.lens_name %></p>
+                    <p>Accessories:<%= photo.accessories %></p>
+                  </details>
                 </div>
                 <div class="class-button">
                   <%= link_to "参加中", "#", class: "btn btn-sm btn-success" %>
@@ -23,7 +29,7 @@
         <% end %>
       <% end %>
     </div>
-    <div class = "col-sm-12 col-md-5 mx-auto ">
+    <div class = "col-sm-12 col-md-6 mx-auto ">
     <h3 class="mb-4">動画</h3>
       <%# movieについて %>
       <% @videos.each do |video| %>
@@ -33,8 +39,10 @@
               <%= link_to post_path(video.id), class: "text-dark text-decoration-none" do %>
               <div class="d-flex justify-content-between">
                 <div class="class-description">
+                  <%= link_to video.video_url.to_s do%>
+                    <%= video_tag(video.video.to_s, :loop => true, :autoplay => true, :muted => true, :width => '100%' , :controls => true, :controlslist => 'nodownload')%>
+                  <% end %>
                   <p class="card-text mb-1">コツ:<%= video.tips %></p>
-                  
                 </div>
               </div>
             </div>
