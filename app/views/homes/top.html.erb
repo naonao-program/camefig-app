@@ -33,22 +33,22 @@
     <h3 class="mb-4">動画</h3>
       <%# movieについて %>
       <% @videos.each do |video| %>
-          <div class="card mb-3">
-            <div class="card-body mb-3">
+          <div class="card mb-3 ">
+            <div class="card-body">
               <h5 class="card-title"><%= video.user.nickname%></h5>
               <%= link_to post_path(video.id), class: "text-dark text-decoration-none" do %>
-              <div class="d-flex justify-content-between">
+              <div class=" justify-content-between">
                 <div class="class-description">
                   <% if video.video.present? == true %>
                     <%= video_tag(video.video.to_s, :loop => true, :autoplay => true, :muted => true, :width => '100%' , :controls => true, :controlslist => 'nodownload')%>
                   <%  elsif  Post.find_by(video: nil) %>
-                    <iframe width="120%" height="100%" src="https://www.youtube.com/embed/<%= video.youtube_url[17..28]%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<%= video.youtube_url[17..28]%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe></td>
                   <% else %>
                     <%= link_to video.video_url.to_s do%>
                       <%= video_tag(video.video.to_s, :loop => true, :autoplay => true, :muted => true, :width => '100%' , :controls => true, :controlslist => 'nodownload')%>
                     <% end %>
                   <% end %>
-                  <p class="card-text mb-2">コツ:<%= video.tips %></p>
+                  <p class="card-text mt-2">コツ:<%= video.tips %></p>
                 </div>
               </div>
             </div>
