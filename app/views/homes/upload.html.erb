@@ -22,7 +22,7 @@
                 <p class= "font-weight-bold">F値<span class="badge badge-danger">必須</span><br><%= f.text_field :f_number,placeholder: "2.8" %></p>
                 <p class= "font-weight-bold">シャッタースピード<span class="badge badge-danger">必須</span><br><%= f.text_field :shutter_speed, placeholder: "1/1000" %></p>
                 <p class= "font-weight-bold">ISO<span class="badge badge-danger">必須</span><br><%= f.text_field :iso, placeholder: "100" %>
-                <p class= "font-weight-bold">撮影した月<br><%= f.select :month, Photo.months %></p>
+                <p class= "font-weight-bold">撮影した月<span class="badge badge-danger">必須</span><br><%= f.select :month, Photo.months %></p>
                 <p class= "font-weight-bold">撮影した時間<span class="badge badge-danger">必須</span><br><%= f.select :time, Photo.times %></p>
                 <p class= "font-weight-bold">撮影時のコツ<br><%= f.text_field :tips %></p>
                 <p class= "font-weight-bold">タグ<br><%= f.text_field :hashtag %></p>
