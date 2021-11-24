@@ -10,10 +10,10 @@
 </main>
 
 <main class = "container">
-  <div class = "row">
+  <div class = "row max-auto">
     <div class = "card-body">
       <% @photos.each do |photo| %>
-        <%= image_tag photo.image, size: '293x293', position:'relative', class: 'user-show-image'%>
+        <%= image_tag photo.image, size: '265x265', position:'relative', class: 'user-show-image'%>
       <% end %>
     </div>
   </div>
