@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_one_attached :profile_image
 
   has_many :photos
-  has_many :videos
+  has_many :posts
 end

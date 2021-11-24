@@ -1,7 +1,20 @@
 <main class= "container">
   <div class = "row mt-4">
     <div class = "col-sm-12 col-md-6 max-auto">
-      
+      <div class= "card-body">
+        <%# プロフィール画像を挿入する %>
+        <%= @user.nickname %><br>
+      </div>
+    </div>
+  </div>
+</main>
+
+<main class = "container">
+  <div class = "row">
+    <div class = "card-body">
+      <% @photos.each do |photo| %>
+        <%= image_tag photo.image, size: '293x293', position:'relative', class: 'user-show-image'%>
+      <% end %>
     </div>
   </div>
 </main>
