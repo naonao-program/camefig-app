@@ -13,7 +13,9 @@
   <div class = "row max-auto">
     <div class = "card-body">
       <% @photos.each do |photo| %>
-        <%= image_tag photo.image, size: '265x265', position:'relative', class: 'user-show-image'%>
+        <%= link_to photo_path(photo.id) do %>
+          <%= image_tag photo.image, size: '265x265', position:'relative', class: 'user-show-image'%>
+        <% end %>
       <% end %>
     </div>
   </div>
