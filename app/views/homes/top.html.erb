@@ -35,7 +35,7 @@
       <% @videos.each do |video| %>
           <div class="card mb-3 ">
             <div class="card-body">
-              <h5 class="card-title"><%= video.user.nickname%></h5>
+              <h5 class="card-title"><%= link_to video.user.nickname, user_path(video.user.id),class: 'text-dark' %></h5>
               <%= link_to post_path(video.id), class: "text-dark text-decoration-none" do %>
               <div class=" justify-content-between">
                 <div class="class-description">
