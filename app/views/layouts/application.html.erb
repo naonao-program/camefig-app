@@ -32,7 +32,7 @@
                   <ul class="navbar-nav ml-auto pull-right">
                     <% if user_signed_in? %>
                       <li class="nav-item pl-4 active">
-                        <a href="#" class="nav-link text-center">HOME</a>
+                        <%= link_to 'Home', root_path, class:"nav-link text-center" %>
                       </li>
                       <li class="nav-item pl-5">
                         <%=link_to 'Upload', upload_path, class:"nav-link text-center" %>
