@@ -1,0 +1,43 @@
+<main class= "container">
+  <div class = "row mt-4">
+    <div class = "col-sm-12 col-md-6 max-auto">
+      <div class= "card-body">
+        <%# プロフィール画像を表示 %>
+        <%= @user.nickname %><br>
+      </div>
+    </div>
+  </div>
+</main>
+
+<main class = "container">
+  <ul class="nav nav-tabs text-center">
+    <li class="nav-item w-50 bg-light"><a href="#photo" class="nav-link active" data-toggle="tab">Photo</a></li>
+    <li class="nav-item w-50 bg-light"><a href="#b" class="nav-link"data-toggle="tab">Video</a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="photo" class="tab-pane active">
+      <div class = "row max-auto">
+        <div class = "card-body">
+          <% @photos.each do |photo| %>
+            <%= link_to photo_path(photo.id) do %>
+              <%= image_tag photo.image, size: '265x265', position:'relative', class: 'user-show-image'%>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div id ="b" class="tab-pane">
+      <% @videos.each do |video|%>
+        <% if video.video.present? == true %>
+          <%= video_tag(video.video.to_s, :loop => true, :autoplay => true, :muted => true, :width => '247' , :controls => true, :controlslist => 'nodownload')%>
+        <%  elsif  Post.find_by(video: nil) %>
+          <iframe  width= "265" height= "265" src="https://www.youtube.com/embed/<%= video.youtube_url[17..28]%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe></td>
+        <% else %>
+          <%= link_to video.video_url.to_s do%>
+            <%= video_tag(video.video.to_s, :loop => true, :autoplay => true, :muted => true, :width => '247' , :controls => true, :controlslist => 'nodownload')%>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</main>

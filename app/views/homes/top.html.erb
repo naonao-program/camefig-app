@@ -1,11 +1,11 @@
 <main class="container">
   <div class="row mt-4">
     <div class="col-sm-12 col-md-6 mx-auto">
-      <h3 class="mb-4">写真</h3>
+      <h3 class="mb-4">Photo</h3>
       <% @photos.each do |photo| %>
           <div class="card mb-3">
             <div class="card-body">
-              <h5 class="card-title"><%= photo.user.nickname %></h5>
+              <h5 class="card-title"><%=link_to photo.user.nickname, user_path(photo.user.id),class: 'text-dark' %></h5>
               <p class = "small"><%= photo.address %></p>
               <%= link_to photo_path(photo.id), class: "text-dark text-decoration-none" do %>
               <div class="justify-content-between">
@@ -30,12 +30,12 @@
       <% end %>
     </div>
     <div class = "col-sm-12 col-md-6 mx-auto">
-    <h3 class="mb-4">動画</h3>
+    <h3 class="mb-4">Movie</h3>
       <%# movieについて %>
       <% @videos.each do |video| %>
           <div class="card mb-3 ">
             <div class="card-body">
-              <h5 class="card-title"><%= video.user.nickname%></h5>
+              <h5 class="card-title"><%= link_to video.user.nickname, user_path(video.user.id),class: 'text-dark' %></h5>
               <%= link_to post_path(video.id), class: "text-dark text-decoration-none" do %>
               <div class=" justify-content-between">
                 <div class="class-description">

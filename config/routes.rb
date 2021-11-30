@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :photos
   resources :posts
   resources :videos
+  resources :users, only:[:show]
 end
