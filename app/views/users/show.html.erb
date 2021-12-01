@@ -14,12 +14,16 @@
     <li class="nav-item w-50 bg-light"><a href="#photo" class="nav-link active" data-toggle="tab">Photo</a></li>
     <li class="nav-item w-50 bg-light"><a href="#b" class="nav-link"data-toggle="tab">Video</a></li>
   </ul>
+  <div id="mask" class="hidden"></div>
+    <div id="modal" class="hidden">
+    <p>モーダルウィンドウ<p>
+  </div>
   <div class="tab-content">
     <div id="photo" class="tab-pane active">
       <div class = "row max-auto">
         <div class = "card-body">
           <% @photos.each do |photo| %>
-            <%= link_to photo_path(photo.id) do %>
+            <%= link_to photo_path(photo.id), remote: true do %>
               <%= image_tag photo.image, size: '265x265', position:'relative', class: 'user-show-image'%>
             <% end %>
           <% end %>
