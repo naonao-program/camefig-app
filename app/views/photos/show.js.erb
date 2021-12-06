@@ -5,7 +5,7 @@ var mask = document.getElementById('mask');
 
 # モーダルの中身をshowビューに置き換えます。
 # 部分テンプレートのパス、localsの値はアプリにより異なります。
-modal.innerHTML = '<%= escape_javascript(render partial: 'shared/photo_show', locals: { photo: @photo, comments: @comments, user: @user, comment: @comment }) %>';
+modal.innerHTML = '<%= escape_javascript(render partial: 'shared/photo_show', locals: { photo: @photo}) %>';
 
 # hiddenクラスを消してモーダルとマスクを表示させます。
 modal.classList.remove('hidden');
