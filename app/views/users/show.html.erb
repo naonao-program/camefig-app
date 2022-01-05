@@ -20,8 +20,6 @@
         <div class = "card-body">
           <% @photos.each do |photo| %>
             <%= link_to photo_path(photo.id), remote: true do %>
-              <div id="mask" class="hidden"></div>
-              <div id="modal" class="hidden"><p>モーダルウィンドウ</p></div>
               <%= image_tag photo.image, size: '265x265', position:'relative', class: 'user-show-image'%>
             <% end %>
           <% end %>
